@@ -39,10 +39,10 @@ public class UserAction {
             if (tuser != null && "0".equals(user.getRemark1())) {// 学生登陆成功
                 model.addAttribute("flag", true);
 
-                model.addAttribute("user", tuser);
+                //model.addAttribute("user", tuser);
                 session.setAttribute("user", tuser);
                 session.setAttribute("userID", tuser.getId());
-                return "redirect:/hms/go";// 登陆到首页
+                return "forward:/hms/go";// 登陆到首页
 
             } else if (tuser != null && "1".equals(user.getRemark1())) {// 管理员登陆成功
                 session.setAttribute("user", tuser);
